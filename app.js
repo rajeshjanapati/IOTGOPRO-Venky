@@ -6,7 +6,11 @@ var debug = require('debug')('iotgo');
 var routes = require('./routes/index');
 // connect Mongoose to your DB
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/iotgo');
+MONGOLAB_URI= mongodb://iotgo:venki.gv143@ds231951.mlab.com:31951/heroku_qk01kgqc
+mongoose.connect(process.env.MONGOLAB_URI, function (error) {
+    if (error) console.error(error);
+    else console.log('mongo connected');
+});
 require('dotenv').config()
 var app = express();
 
