@@ -4,6 +4,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 var debug = require('debug')('iotgo');
 var routes = require('./routes/index');
+var port = process.env.PORT || 8080;
 // connect Mongoose to your DB
 var app = express();
 
@@ -31,8 +32,8 @@ app.use(function(err, req, res, next) {
     // debug(err);
     res.status(err.status || 500).end();
 });
-app.listen(3000, function() {
-  console.log('Example app listening on port 3000!');
+app.listen(port, function() {
+  console.log('app listening on:'+ port);
 });
 
 
