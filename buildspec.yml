@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+  pre_build:
+    commands:
+      - npm install forever -g
+      - npm install bower
+      - npm install
+      - cd public/frontend && bower install
+      - cd ../backend && bower install
+      - cd ../..
+  build:
+    commands:
+      - npm run start
+artifacts:
+  files:
+    - app.js
+    - package.json
+    - node_modules/**/*
