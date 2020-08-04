@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var debug = require('debug')('iotgo');
 var routes = require('./routes/index');
 // connect Mongoose to your DB
-var mongoose = require(‘mongoose’);
+var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/iotgo');
 require('dotenv').config()
 var app = express();
