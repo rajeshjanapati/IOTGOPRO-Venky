@@ -1,10 +1,11 @@
 module.exports = {
-    //host: '127.0.0.1', // Hostname of IoTgo platform
+    host: '127.0.0.1', // Hostname of IoTgo platform
     db: {
-        uri: 'mongodb://easyiot:easyiot@api.easystepin.com:27017/iotgo?authSource=admin', // MongoDB database address
+        //uri: 'mongodb://easyiot:easyiot@api.easystepin.com:27017/iotgo?authSource=admin', // MongoDB database address
+        uri: 'mongodb://localhost/iotgo',
         options: {
-            //user: 'iotgo', // MongoDB database username
-            //pass: 'iotgo', // MongoDB database password
+            user: 'iotgo', // MongoDB database username
+            pass: 'iotgo', // MongoDB database password
         }
     },
     jwt: {
