@@ -5,13 +5,6 @@ var bodyParser = require('body-parser');
 var debug = require('debug')('iotgo');
 var routes = require('./routes/index');
 // connect Mongoose to your DB
-var mongoose = require('mongoose');
-MONGOLAB_URI= mongodb://iotgo:venki.gv143@ds231951.mlab.com:31951/heroku_qk01kgqc
-mongoose.connect(process.env.MONGOLAB_URI, function (error) {
-    if (error) console.error(error);
-    else console.log('mongo connected');
-});
-require('dotenv').config()
 var app = express();
 
 // web app backend
@@ -38,10 +31,9 @@ app.use(function(err, req, res, next) {
     // debug(err);
     res.status(err.status || 500).end();
 });
-const port = process.env.PORT || 3000;
-//app.listen(3000, function() {
-  //console.log('Example app listening on port 3000!');
-//});
-app.listen(port);
+app.listen(3000, function() {
+  console.log('Example app listening on port 3000!');
+});
+
 
 module.exports = app;
